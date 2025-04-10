@@ -1,4 +1,30 @@
 # Tic_Tac_Toe_Game
+
+DATABASE :
+CREATE DATABASE IF NOT EXISTS gameDB;
+
+USE gameDB;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    password varchar(50),
+    age INT
+);
+
+CREATE TABLE user_scores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    score INT,
+    game_date DATETIME,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+select * from users;
+select * from user_scores;
+
+
+
 This is a game with user login and registration using JAVA AWT and JAVA SWING to create game and store the user information and scores 
 
 
